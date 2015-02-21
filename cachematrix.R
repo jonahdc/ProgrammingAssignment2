@@ -18,17 +18,17 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## This function defines the logic in solving and returning cached inverse of a matrix
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
-  m <- x$getInverseMatrix()
-  if(!is.null(m)){
-    message("getting inverse of matrix")
-    return(m)
+    ## Return a matrix that is the inverse of 'x'
+    m <- x$getInverseMatrix()
+    if(!is.null(m)){
+      message("getting inverse of matrix")
+      return(m)
+      
+    }
     
-  }
-  
-  data <- x$get()
-  m <- solve(data, ...)
-  x$setInverseMatrix(m)
-  m
-  
+    data <- x$get()
+    m <- solve(data, ...)
+    x$setInverseMatrix(m)
+    m
+
 }
